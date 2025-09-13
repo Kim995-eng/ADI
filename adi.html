@@ -1,0 +1,144 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>For You — Aesthetic Page</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+  <style>
+    :root{
+      --bg1:#0f172a; /* deep navy */
+      --bg2:#0b1220; /* darker */
+      --accent1:#ff6b81; /* rose */
+      --accent2:#7de3ff; /* aqua */
+      --glass: rgba(255,255,255,0.06);
+      --glass-2: rgba(255,255,255,0.04);
+      --card-radius:22px;
+    }
+    *{box-sizing:border-box}
+    html,body{height:100%;margin:0;font-family:Poppins,system-ui,Segoe UI,Roboto,"Helvetica Neue",Arial;color:#e6eef8;background:linear-gradient(135deg,var(--bg1),var(--bg2));-webkit-font-smoothing:antialiased}
+
+    /* page layout */
+    .wrap{min-height:100vh;display:flex;align-items:center;justify-content:center;padding:48px}
+
+    /* Card */
+    .card{
+      width:100%;max-width:980px;background:linear-gradient(180deg, rgba(255,255,255,0.03), rgba(255,255,255,0.02));
+      border-radius:var(--card-radius);padding:28px;display:grid;grid-template-columns:360px 1fr;gap:28px;backdrop-filter:blur(8px);box-shadow:0 10px 30px rgba(2,6,23,0.6);
+      position:relative;overflow:hidden;border:1px solid rgba(255,255,255,0.04)
+    }
+
+    /* cute top accents */
+    .card::before{content:'';position:absolute;right:-120px;top:-140px;width:420px;height:420px;background:radial-gradient(circle at 30% 30%,var(--accent2) 0%,transparent 40%),radial-gradient(circle at 70% 70%,var(--accent1) 0%,transparent 38%);opacity:0.12;transform:rotate(25deg)}
+
+    /* photo column */
+    .photo{
+      display:flex;flex-direction:column;align-items:center;gap:18px;padding:18px;border-radius:16px;background:linear-gradient(180deg,var(--glass),var(--glass-2));border:1px solid rgba(255,255,255,0.03)
+    }
+    .avatar{
+      width:220px;height:220px;border-radius:999px;overflow:hidden;border:6px solid rgba(255,255,255,0.06);box-shadow:0 12px 30px rgba(2,6,23,0.5);transform:translateZ(0);
+    }
+    .avatar img{width:100%;height:100%;object-fit:cover;display:block}
+
+    .small-info{text-align:center}
+    .name{font-family:'Playfair Display', serif;font-size:28px;margin:6px 0 0 0;color:#fff}
+    .subtitle{font-size:13px;opacity:0.8;margin-top:6px}
+
+    /* right column */
+    .content{display:flex;flex-direction:column;gap:18px;padding:6px 4px}
+    .headline{font-family:'Playfair Display',serif;font-size:36px;margin:0;color:#fff;line-height:1}
+    .lead{font-size:15px;line-height:1.6;color:rgba(230,238,248,0.95)}
+
+    .actions{display:flex;gap:12px;margin-top:6px}
+    .btn{padding:10px 16px;border-radius:12px;border:0;cursor:pointer;font-weight:600;background:linear-gradient(90deg,var(--accent1),var(--accent2));color:#081224;box-shadow:0 6px 20px rgba(125,227,255,0.08);transition:transform .18s ease}
+    .btn:active{transform:translateY(2px)}
+
+    /* little stats */
+    .meta{display:flex;gap:12px;align-items:center;margin-top:8px}
+    .pill{background:rgba(255,255,255,0.02);padding:8px 12px;border-radius:999px;font-size:13px;border:1px solid rgba(255,255,255,0.03)}
+
+    /* floating hearts */
+    .hearts{position:absolute;left:20px;bottom:20px;pointer-events:none}
+    .heart{width:12px;height:12px;background:var(--accent1);transform:rotate(-45deg);border-radius:3px;position:absolute;animation:flo 6s linear infinite;opacity:0.9}
+    .heart::after,.heart::before{content:'';position:absolute;width:12px;height:12px;border-radius:50%;background:var(--accent1)}
+    .heart::before{top:-6px;left:0}
+    .heart::after{left:6px;top:0}
+    @keyframes flo{0%{transform:translateY(0) rotate(-45deg) scale(0.9);opacity:0}10%{opacity:1}50%{opacity:0.9}100%{transform:translateY(-380px) rotate(-45deg) scale(1.2);opacity:0}}
+
+    /* responsive */
+    @media (max-width:880px){.card{grid-template-columns:1fr;padding:18px}.avatar{width:180px;height:180px}.headline{font-size:28px}}
+    @media (max-width:480px){.avatar{width:140px;height:140px}.headline{font-size:22px}}
+
+    /* small flourish */
+    .quote{font-style:italic;padding:12px;border-left:3px solid rgba(255,255,255,0.04);background:linear-gradient(90deg,transparent,rgba(255,255,255,0.01));border-radius:10px}
+
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <article class="card" role="article" aria-label="For my love">
+
+      <div class="photo">
+        <figure class="avatar" aria-hidden="false">
+          <!-- Replace 'girlfriend.jpg' with your photo file in same folder. Keep the file name or update the src below. -->
+          <img src="541166308_1547263546656265_751833064359811830_n.jpg" alt="Photo of my girlfriend" onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1524504388940-b1c1722653e1?q=80&w=800&auto=format&fit=crop&s=placeholder'">
+        </figure>
+        <div class="small-info">
+          <div class="name">Barbie</div>
+          <div class="subtitle">My adi • My wifey</div>
+        </div>
+
+        <div class="meta">
+          <div class="pill">Ilove u adi</div>
+          <div class="pill">Miss u wifey ko</div>
+        </div>
+      </div>
+
+      <div class="content">
+        <h1 class="headline">For the one who makes everything better</h1>
+        <p class="lead">Hey love — this little page is just a simple reminder that you are seen. I made this for you: your smile, the way you laugh at the small things, and how you make ordinary days feel like a story.</p>
+
+        <div class="quote">"You are my wifey."</div>
+
+        <div class="actions">
+          <button class="btn" onclick="document.querySelector('.avatar img').classList.toggle('zoom')">Toggle Photo</button>
+          <a class="btn" href="#message" style="text-decoration:none;display:inline-flex;align-items:center;justify-content:center">Leave a message</a>
+        </div>
+
+        <div style="margin-top:6px;display:flex;gap:10px;align-items:center;flex-wrap:wrap">
+          <div class="pill">🌙 Night owl</div>
+          <div class="pill">☕ Coffee > Tea</div>
+          <div class="pill">✈️ Dream: Tokyo</div>
+        </div>
+
+       
+
+      </div>
+
+      <!-- decorative hearts (a few clones with different delays) -->
+      <div class="hearts" aria-hidden="true">
+        <div class="heart" style="left:10px;animation-delay:0s;width:12px;height:12px"></div>
+        <div class="heart" style="left:40px;animation-delay:1.2s;width:16px;height:16px"></div>
+        <div class="heart" style="left:70px;animation-delay:2.4s;width:10px;height:10px"></div>
+        <div class="heart" style="left:110px;animation-delay:3.6s;width:14px;height:14px"></div>
+      </div>
+
+    </article>
+  </div>
+
+  <script>
+    // small interactivity: double-click the avatar to change picture (file input)
+    const avatar = document.querySelector('.avatar img');
+    avatar.addEventListener('dblclick', ()=>{
+      const inp = document.createElement('input'); inp.type='file'; inp.accept='image/*';
+      inp.onchange = e => {
+        const file = e.target.files[0]; if(!file) return; const url = URL.createObjectURL(file); avatar.src = url;
+      }
+      inp.click();
+    })
+
+    // simple zoom class for Toggle Photo button
+    const style = document.createElement('style'); style.innerHTML='.zoom{transform:scale(1.04);transition:transform .45s ease}'; document.head.appendChild(style);
+  </script>
+</body>
+</html>
